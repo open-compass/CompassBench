@@ -1,129 +1,46 @@
 [
     {
-        "instruction": "编写一个Chrome插件，用于保存当前页面的内容",
+        "instruction": "我有一个上个月备份的Linux Mint系统，备份文件是一组.gz（压缩的tar文件）。使用tar命令时，我应该用什么参数来更新已更改的文件，而不重新存档未更改的文件？",
         "checklist": [
-            "回答是否提供了创建Chrome插件所需的所有必要文件（例如manifest, background script, content script）的详细列表？",
-            "是否对每个文件的作用进行了清晰的解释？",
-            "回答是否提供了每个文件的代码及其详细说明？",
-            "代码是否注释清楚，易于理解和维护？",
-            "回答是否详尽描述了如何实现保存当前页面内容的功能？",
-            "是否解释了插件实现过程中涉及的主要API（例如Chrome API）的使用？",
-            "回答中是否包含了插件的用户界面设计（例如，按钮，菜单项，图标）？",
-            "是否解释了插件如何与用户交互，以及如何触发内容保存功能？",
-            "回答是否提供了调试插件的指导步骤？",
-            "是否包含了如何测试插件功能的说明，以确保其在各种情境下的稳定性和可靠性？",
-            "回答是否解释了如何在Chrome浏览器中安装和部署插件？",
-            "是否提供了应用市场上传真插件的必要步骤，或是手动加载插件的方法？",
-            "回答是否包含了适当的版权和许可声明？",
-            "是否提到了插件开发中的潜在法律问题（例如，版权、隐私）？",
-            "回答是否提到了未来的功能扩展建议，以增强插件的实用性和用户体验？"
+            "回答是否提供了适当的 `tar` 命令及其参数来更新已更改的文件？",
+            "是否正确解释了每个命令参数的作用？",
+            "回答是否包含如何验证更新过程成功（例如使用校验和或比较文件日期）？",
+            "是否考虑了如何处理可能的权限和所有权问题？",
+            "回答是否描述了如何从更新的备份文件中恢复系统？",
+            "是否讨论了恢复过程中可能遇到的问题及其解决方法？",
+            "回答是否讨论了提高备份和恢复过程效率的方法？",
+            "是否提到如何最小化系统资源的使用（例如内存和磁盘空间）？",
+            "回答是否包括在进行任何关键操作前采取备份措施的建议？"
         ],
         "category": "Coding"
     },
     {
-        "instruction": "我正在尝试在一台配备多个GPU的计算机上运行一个pytorch程序。但我的程序只使用了一个GPU！我可以在代码中修改什么，让它使用所有可用的GPU？",
+        "instruction": "编写一个Python函数，该函数接受用户输入的字符串，以及作为字典（dict）传递的变量名称到值的映射（两者都是字符串）。函数应该搜索用户输入的字符串中每一个指定的变量名称，并用变量值替换它们。输入字符串中的变量必须包含在尖括号（<和>）内，且长度不能超过30个字符。当找到时，函数应该连同尖括号一起将变量名替换为变量值。未包含在尖括号内但匹配变量名的文本不应该被处理。长度超过30个字符的变量也不应该被处理。函数应该返回变量替换后的修改过的字符串。",
         "checklist": [
-            "回答是否检查系统是否正确识别所有可用的GPU？",
-            "是否包含了如何在PyTorch中验证系统上的所有GPU？",
-            "是否说明了如何使用 `torch.nn.DataParallel` 以便简单地在多个GPU上并行运行模型？",
-            "是否提供了代码示例展示如何实现 `DataParallel`？",
-            "是否介绍了 `torch.nn.parallel.DistributedDataParallel` 以实现分布式训练？",
-            "是否详细说明了如何设置分布式环境，包括初始化进程组和正确的GPU分配？",
-            "回答中是否包含了有关设置正确的批量大小和学习率以优化多GPU训练的指导？",
-            "是否提供了有关可能的性能瓶颈和优化方法的提示，如数据加载、同步和通信开销？",
-            "是否描述了在实现多GPU训练时常见的错误及其可能的解决方法？",
-            "是否提到了如何使用验证工具来确保模型在所有GPU上正确运行和同步？"
+            "回答是否清楚地验证了函数接收的输入类型和格式（即字符串和字典）？",
+            "是否考虑了输入字符串中的变量名长度不能超过30个字符？",
+            "回答是否正确扫描了输入字符串以识别包含在尖括号内的变量名？",
+            "是否确保了识别到的变量名准确匹配字典中的键？",
+            "回答是否处理了输入字符串中未包含在尖括号内但与变量名匹配的情况，确保这些部分不被替换？",
+            "是否处理了超过30个字符长度的变量，确保这些变量不会被替换？",
+            "回答是否返回了所有变量名被正确替换后的字符串？",
+            "是否考虑到多个相同变量的重复替换问题？",
+            "回答中的代码是否高效，即避免了不必要的重复操作？",
+            "是否清晰且易于理解，包含了应有的注释和清晰的变量命名？"
         ],
         "category": "Coding"
     },
     {
-        "instruction": "请逐步指导我如何从零开始创建一个大型语言模型（LLM）。假设我已经具备Python编程的基础知识。",
+        "instruction": "Traceback (most recent call last):\n  File \"PackerFuzzer.py\", line 4, in <module>\n    from lib.Controller import Project\n  File \"/Packer-Fuzzer/Packer-Fuzzer/lib/Controller.py\", line 15, in <module>\n    from lib.Recoverspilt import RecoverSpilt\n  File \"/Packer-Fuzzer/Packer-Fuzzer/lib/Recoverspilt.py\", line 4, in <module>\n    import node_vm2, os, re, sqlite3\n  File \"/usr/local/lib/python3.5/dist-packages/node_vm2/__init__.py\", line 391\n    raise VMError(f\"Failed starting VM server. '{self.command}' is unavailable.\") from err\n                                                                               ^\nSyntaxError: invalid syntax\n这是什么报错",
         "checklist": [
-            "回答是否明确提到所需的基本硬件和软件环境（如计算资源、Python版本、IDE等）？",
-            "是否列出了所需的关键库和依赖项（如TensorFlow, PyTorch, Transformers等）？",
-            "是否详细解释了如何收集和处理用于训练的大规模文本数据？",
-            "回答中是否包含对数据清理及预处理步骤（如去除噪声、分词、数据分割等）的说明？",
-            "是否讨论了如何确保数据的多样性和质量？",
-            "回答中是否详细描述了如何选择和设计合适的语言模型架构（如GPT、BERT类型的模型）？",
-            "是否解释了模型的各类超参数及其重要性，以及如何调整这些超参数？",
-            "是否提供了训练模型的详细步骤，包括训练算法、损失函数的选择、训练过程中的监控和调整方法？",
-            "回答是否提供了如何评估模型效果（如使用哪些指标，如何计算）的详细信息？",
-            "是否讨论过如何进行模型调优（如调参、使用更好的优化算法、数据增强等）？",
-            "回答是否提到了常见问题和调试方法？",
-            "回答是否涵盖部署模型所需的步骤和注意事项？",
-            "是否讨论了如何测试和验证部署后的模型效果？",
-            "回答是否包括如何优化模型以提高运行效率和降低资源消耗的策略？",
-            "是否提及了如何更新和维护模型，以应对新的需求或数据变化？",
-            "回答是否提到了创建和使用大型语言模型时需要考虑的伦理和法律问题（如隐私问题、数据版权、模型滥用等）？",
-            "回答是否提供了进一步学习和研究的资源（如教程、论文、开源项目）？",
-            "回答是否提供了相关的社区或论坛，以便继续交流和学习？"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "模型训练日志如下，可能是发生了什么问题？[E ProcessGroupNCCL.cpp:474] [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800197 milliseconds before timing out.\n[E ProcessGroupNCCL.cpp:474] [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800258 milliseconds before timing out.\n[E ProcessGroupNCCL.cpp:474] [Rank 4] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800226 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:79:400 [0] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:79:400 [0] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:81:403 [2] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:79:400 [0] NCCL INFO [Service thread] Connection closed by localRank 4\ndlc1ep83rad1ik2d-master-0:83:404 [4] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:81:403 [2] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:81:403 [2] NCCL INFO [Service thread] Connection closed by localRank 4\ndlc1ep83rad1ik2d-master-0:82:402 [3] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:83:404 [4] NCCL INFO [Service thread] Connection closed by localRank 4\ndlc1ep83rad1ik2d-master-0:84:401 [5] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:83:404 [4] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:85:399 [6] NCCL INFO [Service thread] Connection closed by localRank 4\ndlc1ep83rad1ik2d-master-0:85:399 [6] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:85:399 [6] NCCL INFO [Service thread] Connection closed by localRank 3\n[E ProcessGroupNCCL.cpp:474] [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800223 milliseconds before timing out.\n[E ProcessGroupNCCL.cpp:474] [Rank 0] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800360 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:84:350 [0] NCCL INFO comm 0x55931f1524c0 rank 5 nranks 16 cudaDev 5 busId 60 - Abort COMPLETE\n[E ProcessGroupNCCL.cpp:488] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.\n[E ProcessGroupNCCL.cpp:494] To avoid data inconsistency, we are taking the entire process down.\n[E ProcessGroupNCCL.cpp:915] [Rank 5] NCCL watchdog thread terminated with exception: [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800197 milliseconds before timing out.\nterminate called after throwing an instance of 'std::runtime_error'\n  what():  [Rank 5] NCCL watchdog thread terminated with exception: [Rank 5] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800197 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:82:351 [0] NCCL INFO comm 0x55e23f709330 rank 3 nranks 16 cudaDev 3 busId 40 - Abort COMPLETE\n[E ProcessGroupNCCL.cpp:488] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.\n[E ProcessGroupNCCL.cpp:494] To avoid data inconsistency, we are taking the entire process down.\n[E ProcessGroupNCCL.cpp:915] [Rank 3] NCCL watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800258 milliseconds before timing out.\nterminate called after throwing an instance of 'std::runtime_error'\n  what():  [Rank 3] NCCL watchdog thread terminated with exception: [Rank 3] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=191041665, NumelOut=191041665, Timeout(ms)=1800000) ran for 1800258 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:85:436 [6] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:83:437 [4] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:79:430 [0] NCCL INFO [Service thread] Connection closed by localRank 3\ndlc1ep83rad1ik2d-master-0:81:434 [2] NCCL INFO [Service thread] Connection closed by localRank 3\n[E ProcessGroupNCCL.cpp:474] [Rank 7] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800675 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:85:436 [6] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:83:437 [4] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:79:430 [0] NCCL INFO [Service thread] Connection closed by localRank 5\ndlc1ep83rad1ik2d-master-0:81:434 [2] NCCL INFO [Service thread] Connection closed by localRank 5\n[E ProcessGroupNCCL.cpp:474] [Rank 6] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800796 milliseconds before timing out.\n[E ProcessGroupNCCL.cpp:474] [Rank 2] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800891 milliseconds before timing out.\ndlc1ep83rad1ik2d-master-0:79:400 [0] NCCL INFO [Service thread] Connection closed by localRank 1\ndlc1ep83rad1ik2d-master-0:80:398 [1] NCCL INFO [Service thread] Connection closed by localRank 1\ndlc1ep83rad1ik2d-master-0:81:403 [2] NCCL INFO [Service thread] Connection closed by localRank 1\ndlc1ep83rad1ik2d-master-0:83:404 [4] NCCL INFO [Service thread] Connection closed by localRank 1\ndlc1ep83rad1ik2d-master-0:85:399 [6] NCCL INFO [Service thread] Connection closed by localRank 1\ndlc1ep83rad1ik2d-master-0:80:392 [0] NCCL INFO comm 0x56049c626c40 rank 1 nranks 16 cudaDev 1 busId 20 - Abort COMPLETE\n[E ProcessGroupNCCL.cpp:488] Some NCCL operations have failed or timed out. Due to the asynchronous nature of CUDA kernels, subsequent GPU operations might run on corrupted/incomplete data.\n[E ProcessGroupNCCL.cpp:494] To avoid data inconsistency, we are taking the entire process down.\n[E ProcessGroupNCCL.cpp:915] [Rank 1] NCCL watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800223 milliseconds before timing out.\nterminate called after throwing an instance of 'std::runtime_error'\n  what():  [Rank 1] NCCL watchdog thread terminated with exception: [Rank 1] Watchdog caught collective operation timeout: WorkNCCL(SeqNum=1905, OpType=ALLREDUCE, NumelIn=198425628, NumelOut=198425628, Timeout(ms)=1800000) ran for 1800223 milliseconds before timing out.",
-        "checklist": [
-            "回答是否准确识别出了日志中所发生的问题？",
-            "是否清晰地解释了这些问题对训练过程可能产生的影响？",
-            "回答是否提供了引发这些问题的可能原因的详细分析？",
-            "是否考虑了潜在的硬件、软件和网络问题，例如NCCL通信、CUDA内存分配、网络连接等？",
-            "回答是否提供了调试此类问题的方法？",
-            "是否建议了具体的监控工具或流程来捕捉并分析未来的类似问题？",
-            "回答是否提供了实际的解决方案或缓解措施，例如调整超时设置、优化网络配置或检查节点健康状况？",
-            "是否详细说明了如何实施这些解决方案？",
-            "回答是否提供了避免未来发生类似问题的建议，例如系统监控、资源配置优化等？",
-            "是否提出了改进集群管理的建议，以确保高可用性和鲁棒性？"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "我需要一个Apache配置文件，以实现反向代理到同一台机器上运行在8001端口的Wordpress Docker容器",
-        "checklist": [
-            "回答中是否包含了完整的Apache配置文件，以实现反向代理到8001端口的Wordpress Docker容器？",
-            "配置文件的结构是否清晰，包含了适当的注释以说明各部分的用途和功能？",
-            "是否包含了反向代理的指令，例如`ProxyPass`和`ProxyPassReverse`？",
-            "指令内的URL路径和端口是否正确配置，以指向8001端口上运行的Wordpress Docker容器？",
-            "答案中是否包含了一个明确的服务器名称或虚拟主机配置，以确保请求能够正确路由到反向代理？",
-            "是否包含了相应的`ServerName`或`ServerAlias`指令？",
-            "如果要求使用SSL，回答中是否包含了SSL配置的相关指令，例如`SSLEngine on`、`SSLCertificateFile`、`SSLCertificateKeyFile`？",
-            "SSL配置是否完整并确保安全？",
-            "回答中是否包括了用于调试和确保安全的必要指令，例如`ErrorLog`和`CustomLog`？",
-            "是否包含了可能的安全设置，例如限制访问、设置防火墙规则或隐藏服务器签名？"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "我在使用vscode阅读一个用python语言编写的代码项目,请推荐一下有哪些插件可以生成项目代码的逻辑图或者类图，帮助我更好地理解代码逻辑",
-        "checklist": [
-            "回答是否推荐了适用于Visual Studio Code的插件来生成Python项目的逻辑图或类图？",
-            "每个推荐的插件是否包含一个简要的描述，包括主要功能和用途？",
-            "回答是否具体说明了每个插件用于生成逻辑图或类图的功能？",
-            "是否提及了每个插件是否支持其他相关功能（如代码分析、依赖关系图）？",
-            "回答是否包含如何安装每个推荐插件的简要说明？",
-            "是否详细描述了如何使用每个插件生成逻辑图或类图的步骤？",
-            "回答是否提及了插件与VS Code版本及Python版本的兼容性？",
-            "是否讨论了插件的性能，特别是在处理大型项目时的表现？",
-            "回答是否提供了每个插件的用户评价或质量评分？"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "请编写 C++ 代码从端口 888 的套接字读取网络数据包",
-        "checklist": [
-            "是否包含必要的头文件？",
-            "是否定义和初始化了所需的变量和数据结构？",
-            "是否创建了套接字并正确绑定到端口 888？",
-            "是否包含监听和接受连接请求的代码？",
-            "是否正确实现了从套接字读取数据包的逻辑？",
-            "是否处理潜在的读取错误或异常情况（如网络中断）？",
-            "是否包含资源管理代码以确保文件描述符的适当关闭？",
-            "是否考虑了多线程或异步处理，以防止阻塞操作？",
-            "是否包含全面的错误处理机制？",
-            "是否输出了有用的调试信息，以便在出现问题时进行故障排查？",
-            "是否使用了清晰且一致的代码风格？",
-            "是否包含有助于理解代码功能的注释？",
-            "是否考虑了网络安全问题（如输入验证、缓冲区溢出保护）？",
-            "是否对性能进行了优化（如设置适当的套接字选项、使用合适的缓冲区大小）？"
+            "回答是否正确识别了错误类型（例如 SyntaxError，ImportError 等）？",
+            "回答是否确定了错误的具体来源（例如，哪个文件和哪个代码行导致了错误）？",
+            "是否明确指出了导致错误的代码行及其上下文信息？",
+            "回答是否详细解释了错误发生的原因（例如，详细解释了 SyntaxError 的具体原因）？",
+            "是否提供了背景信息，以帮助理解错误的本质和原因（例如，Python 版本不兼容问题）？",
+            "回答是否提供了一个或多个切实可行的解决方案来修复错误？",
+            "是否根据错误原因提供了具体的修复步骤或代码修改建议？",
+            "回答中是否包含了防止此类错误发生的建议或最佳实践？"
         ],
         "category": "Coding"
     },
@@ -144,6 +61,100 @@
         "category": "Coding"
     },
     {
+        "instruction": "深呼吸。请用python编写代码，让位于10.0.35.11的PoA以太坊链挖一个区块。",
+        "checklist": [
+            "**是否包含了所需的Python库和依赖项的引入？** 例如：`web3`",
+            "**是否正确配置并建立了与位于10.0.35.11节点的连接？**",
+            "使用Web3实例连接到指定的以太坊节点。",
+            "**是否包含了启动区块挖掘的配置和命令？**例如：发送RPC命令以启动挖矿。",
+            "**代码是否包含了适当的错误处理，以应对可能的连接或挖矿过程中的错误？**",
+            "**是否有验证步骤以确认区块成功挖掘？**例如：检查目标节点的区块高度或使用挖矿状态返回值进行验证。",
+            "**是否包含了调试信息和日志记录，以便在出错时进行诊断？**"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "写一个Scheme程序来判断一个数字是否是奇数。",
+        "checklist": [
+            "回答是否提供了一个完整的、可执行的 Scheme 程序？",
+            "程序是否正确判断给定数字是否为奇数？",
+            "代码是否简洁明了，不包含冗余或不必要的部分？",
+            "是否使用了有效的方法来判断奇数而不是过度复杂的方法？",
+            "代码是否具有良好的结构，便于阅读和理解？",
+            "是否包含了适当的注释，以解释关键部分的功能？",
+            "程序是否能够处理不同类型的输入（例如，整数、负数、非数字）？",
+            "是否采取适当的措施来确保输入正确处理（例如，类型检查或错误处理）？",
+            "回答中是否提到了测试该程序的具体案例？",
+            "测试案例是否覆盖了不同情况（例如，正数、负数、零、非整数）？",
+            "是否有提到程序的扩展或改进的建议，如处理浮点数、提升性能等？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "请输出以下代码的执行结果\n```js\nconst obj = {a: 0};\nobj[1] = 3;\nobj[++obj.a] = obj.a++;\nconst values = Object.values(obj);\nobj[values[1]] = obj.a;\nconsole.log(obj);\n```\nA: { a: 3, 1: 3 }\nB: { 1: 1, 2: 2, a: 2 }\nC: { a: 2, 1: 3, 2: 1 }\nD: { 1: 1, 2: 2, a: 3 }",
+        "checklist": [
+            "回答是否正确解释了每一步代码执行的结果？",
+            "是否详细说明了每个赋值和自增操作对对象 `obj` 的影响？",
+            "是否精准地描述了如何访问和修改对象 `obj` 的属性？",
+            "是否解释了对象键（包括数字键和字符串键）之间的转换？",
+            "回答是否准确识别了操作顺序和优先级，包括自增操作 (`++和a++`) 的执行顺序？",
+            "对照了不同操作（如赋值操作和自增操作）的执行效果吗？",
+            "回答是否计算并描述了对象 `obj` 的最终状态以及每个属性的最终值？",
+            "是否清楚地给出了最终的对象结果并解释了如何得出这个结果？",
+            "回答是否解释了其他选项为何不正确，以及每个错误选项中的逻辑错误或误解在哪里？",
+            "是否展示了对所有备选答案进行了全面的分析？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "用一行Python代码和lambda函数以及列表推导式来获取从1到200的质数列表",
+        "checklist": [
+            "回答是否成功生成了1到200之间的所有质数？",
+            "是否使用了lambda函数和列表推导式来生成质数列表？",
+            "代码是否在一行内完成（满足问题中的要求）？",
+            "是否有效利用了Python的内置功能和语法结构来实现代码简洁？",
+            "代码在生成质数方面是否高效？（例如，避免不必要的计算）",
+            "是否有效利用了任何常见的优化技术（如排除已知非质数）？",
+            "代码是否易于理解，尽管仅有一行？",
+            "是否用了明确且适当的变量名（如果有）来提高可读性？",
+            "是否采用了Pythonic的方式（利用Python惯用语法）解决问题？",
+            "是否避免了不建议使用的模式或技术？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "你现在需要按照我的指示一步一步的完成SQL语句的构建，下面是SQL语句的构建步骤：\n步骤1：询问用户需要查询的事件id\n步骤2：取事件id的尾数，将尾数与固定字符串\"event_list_\"拼接，作为要查询的表名\n步骤3：取busi_event_id = '事件id'，并放在where子句中作为查询的条件\n步骤4：根据要查询的表名和查询的条件，查询所有字段信息，生成SQL语句\n以下是一个示例：\n步骤1：询问用户需要查询的事件id，获取到回答中的事件id：3000041\n步骤2：取事件id的尾数，3000041的尾数是1，将其与event_list_拼接，作为要查询的表名event_list_1\n步骤3：取busi_event_id = '3000041'作为where查询条件\n步骤4：生成SQL语句：select * from event_list_1 where busi_event_id = '3000041'\n现在请开始SQL语句的构建，我要查询的事件id是30000784，按照步骤一步一步构建",
+        "checklist": [
+            "是否询问并确认了用户输入的事件id？",
+            "回答中是否正确获取并显示了用户提供的事件id？",
+            "是否准确提取了事件id的尾数？",
+            "提取的尾数是否正确拼接到了“event_list_”形成表名？",
+            "回答中是否完整设置了busi_event_id的匹配条件？",
+            "条件中的事件id是否与用户最初提供的一致？",
+            "是否将目标表名和查询条件正确组合生成了SQL语句？",
+            "生成的SQL语句是否结构正确，并包含所有必要的部分（如SELECT和FROM子句）？",
+            "回答是否清晰展示了最终生成的SQL语句，没有模糊或缺失？",
+            "最终SQL语句是否达到了查询“所有字段信息”的目的？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "你可以创建一个Matlab livescript来模拟一个风扇在水箱中产生的水波吗？水箱的长度是0.42米，宽度是0.36米。风速为2.5米/秒，且风沿水箱全长平行于水面吹过。",
+        "checklist": [
+            "是否正确设定了水箱的尺寸（长度与宽度分别为 0.42 米 和 0.36 米）？",
+            "是否设定了风速为 2.5 米/秒，并且风沿水箱全长平行于水面吹过的方向？",
+            "回答是否使用了适当的物理模型和公式来模拟风在水箱中产生的水波（例如，考虑风速、水深、波浪传播方程等）？",
+            "是否解释了物理模型的选择以及其适用范围？",
+            "回答是否包含了一个完整且正确的 Matlab livescript 代码，用于模拟风在水箱中产生的水波？",
+            "代码中是否包含了详细的注释和解释，使其易于理解和复现？",
+            "回答是否提供了适当的可视化工具来展示模拟结果（例如，图表、水波动画等）？",
+            "可视化是否清晰并能够直观地显示风对水面产生的影响？",
+            "回答中是否讨论了如何调整模拟的细节和参数（例如，网格分辨率、时间步长等），以优化模拟结果的精度和稳定性？",
+            "是否提供了与初始模拟参数不同的结果或敏感性分析来验证模拟的鲁棒性？"
+        ],
+        "category": "Coding"
+    },
+    {
         "instruction": "# uftcode= 8\nfrom YF.model_module.Algorithm_block.PatchMixer.PatchMixer_keras import PathMixerModel\nfrom YF.model_interface.base_interface import YF_Model\nfrom tensorflow import keras\nfrom tensorflow.keras import layers\nfrom YF.data_process.ML_data_process import mw_train_data,mw_forecast_data\nfrom tensorflow.keras.callbacks import EarlyStopping,ReduceLROnPlateau\n\n\nclass config():\n    def __init__(self):\n        pass\n\nclass PatchMixer(YF_Model):\n    '''\n    PatchMixer based on paper: https://arxiv.org/abs/2310.00655v1\n\n    new items in Configures:\n\n    configures:stride'训练数据的步长间隔,1为每个时间点都有数据,数据量较大,不推荐\n    configures:decoder_levels : 未来特征的层级列表,同一个层级的特征在一个list里面,可以设置为[[\"sales\"],[\"sales_2\",\"sales_1\"]]\n\n    hparams:patach_len: 认为的时序周期的长度,daliy数据为7天,weekliy数据为4天\n    hparams:stride: Patch去数据的间隔,默认为7   \n    '''\n    # 配置，保存路劲，\n    def __init__(self,  configures, save_path,return_last_res = True, init_mode_path=None,logger=None):\n        super(PatchMixer,self).__init__(configures, save_path, init_mode_path,logger)\n        self.forecast_input_configures = configures.get('forecast_input_configures',None)\n        self.configures['embed_type'] = 'embed'\n        self.configures['rolling'] = False\n        self.configures['set_cat'] = False\n        self.configures['return_pandas'] = False\n\n        self.return_last_res = return_last_res\n        self.save_path = self.save_path + '/model.h5'\n\n    def get_column_indices(self, cols, col_names):\n        return [cols.index(col) for col in col_names]\n\n    def get_config(self,is_train):\n        configs = config()\n        # 编码器的特征长度，加1是因为有一列目标列\n        configs.enc_in = self.configures.get('encoder_feature_len') + 1\n        # 解码器的特征长度\n        configs.dec_in = self.configures.get('decoder_feature_len')\n        # 预测用的历史长度\n        configs.seq_len = self.configures.get('encoder_len_mw')\n        # 预估的目标长度\n        configs.pred_len = self.configures.get('forecast_len')\n        #是否对目标y进行log\n        configs.log_y = self.configures.get('log_y', False)\n        #\n        configs.decoder_levels = self.configures.get('decoder_levels')\n        decoder_cols = self.configures['decoder_cols']\n        decoder_cols_inds = []\n        for i in range(len(configs.decoder_levels)):\n            tmp_decoder_cols = configs.decoder_levels[i]\n            de_col_ind = self.get_column_indices(decoder_cols, tmp_decoder_cols)\n            decoder_cols_inds.append(de_col_ind)\n        self.configures['decoder_cols_inds'] = decoder_cols_inds\n        self.configures['feautre_level'] = len(configs.decoder_levels)\n        configs.decoder_cols_inds = decoder_cols_inds\n        configs.feautre_level = len(configs.decoder_levels)\n\n        configs.patch_len = self.hparams.get('patch_len', 7)\n        configs.stride = self.hparams.get('stride', 7)\n        configs.padding_patch = 'end'\n        configs.mlp_layer_num = self.hparams.get('mlp_layer_num')\n        configs.mlp_dim = self.hparams.get('mlp_dim')\n        configs.d_model = self.hparams.get('mlp_dim')\n        configs.mlp_l1_regular = self.hparams.get('mlp_l1_regular')        \n\n        configs.return_last_res = self.return_last_res\n        configs.is_train = is_train\n\n        return configs\n    \n    def get_model(self,is_train = True):\n        \n        configs = self.get_config(is_train)\n        pmm = PathMixerModel(configs)\n        x = layers.Input((configs.seq_len, configs.enc_in))\n        dec_inp = layers.Input((configs.pred_len, configs.dec_in))\n        static_feature = layers.Input((len(self.configures['embed_cols_ori'])))\n        out = pmm((x,dec_inp,static_feature))\n        self.model = keras.Model(inputs=[x,dec_inp,static_feature], outputs=out)\n\n        return self.model\n\n    def train(self, data, last_train_output_configures=None):\n\n        data_series, static_features = data\n        self.configures,self.train_data = mw_train_data(data_series, static_features,self.configures,False)()\n\n        self.model = self.get_model(is_train = True)\n        loss_fn = self.configures.get('loss', 'mae')\n        optimizer =  keras.optimizers.Adam( lr=self.hparams.get('learning_rate',0.01) )\n        # Compile the model\n        self.model.compile(optimizer=optimizer, loss=loss_fn)\n        data_val = (self.train_data['val_input'], self.train_data['val_target'], self.train_data['val_weight'])\n        callbacks = [EarlyStopping(monitor='val_loss', patience=self.run_params['patience'],restore_best_weights=True),\n                    ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=5, min_lr=0.001)]\n        his = self.model.fit(self.train_data['input'],\n                    self.train_data['target'],\n                    sample_weight = self.train_data['weight'],\n                    batch_size=self.run_params['batch_size'],\n                    epochs=self.run_params['epochs'],\n                    callbacks=callbacks,\n                    validation_data=data_val,\n                            shuffle=True,\n                            verbose=True)\n        self.model.save_weights(self.save_path)\n        train_output_configures = {}\n        train_output_configures['configures'] = self.configures\n        train_output_configures['model_type'] = self.model_type\n        train_output_configures['run_params'] = self.run_params\n        train_output_configures['hparams'] = self.run_params\n\n        return his,train_output_configures\n    \n    def forecast(self, data):\n        data_series, static_features = data\n        self.model = self.get_model(is_train = False)\n        self.model.load_weights(self.save_path)\n        if self.configures.get('his_end') is None:\n            his_end = data_series[data_series['is_his']==1]['index'].max()\n            self.configures['his_end'] = his_end\n\n\n        forcest_input = mw_forecast_data(data_series, static_features,self.configures,False)()\n        res = self.model.predict(forcest_input['input'])\n        result = forcest_input['decoder']\n        if self.return_last_res:\n            result['pred_y_scaled'] = res[:,:,0].flatten()\n            result['pred_y'] = result['pred_y_scaled'] * result['y_mean']\n        else:\n            levels = res.shape[-1]\n            for i in range(levels):               \n                if i == levels-1:\n                    scaled_cols_name = 'pred_y_scaled'\n                    cols_name = 'pred_y'\n                else:\n                    scaled_cols_name = 'pred_y_scaled_level_'+str(i-1)\n                    cols_name = 'pred_y_level_'+str(i-1)\n                result[scaled_cols_name] = res[:, :, i].flatten()\n                result[cols_name] = result[scaled_cols_name] * result['y_mean']\n\n\n        return result\n\n\n详细解释上述代码",
         "checklist": [
             "回答是否提供了代码的整体概述和目的？",
@@ -156,6 +167,131 @@
             "是否解释了模型训练过程中的回调和参数选择？",
             "回答是否提供了关于如何使用模型进行预测的详细说明？",
             "是否讨论了预测结果的处理和其他潜在的后处理步骤？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "在 After Effects 中编写一个表达式，将其添加到形状图层的路径属性中，以便它绘制一个500x500像素的正方形，并且右上角是圆角的",
+        "checklist": [
+            "回答是否确保绘制了一个大小为500x500像素的正方形？",
+            "回答是否确保右上角是圆角？",
+            "回答是否包括一个完整且正确的After Effects表达式？",
+            "表达式是否能够在After Effects中运行且不产生错误？",
+            "表达式是否易于调整，以便修改正方形的尺寸或者圆角的半径？",
+            "如果有必要，回答是否包含简洁的注释来解释表达式中的各个关键部分及其功能？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "我想本地部署一个可调参的大模型,本地gpu内存为12g,需要调参,主要使用中文,帮我选择模型和调参方式以及部署方式,以及相关教程或链接",
+        "checklist": [
+            "回答是否提供了一个或多个适合本地GPU 12G内存的模型选项？",
+            "模型是否专注于中文处理？",
+            "回答是否包含如何对选择的模型进行调参的详细说明？",
+            "是否提供了适合12G内存限制的具体调参建议？",
+            "回答是否提供了详细的本地部署步骤或方式？",
+            "部署方式是否适用于12G内存的GPU？",
+            "回答是否提供了与模型选择、调参和部署相关的教程或文档链接？",
+            "提供的教程和链接是否易于访问和使用？",
+            "回答是否考虑了实际操作的可行性和具体应用环境？",
+            "提供的建议是否综合和实用，可正常执行？",
+            "回答是否提供了一些模型选项？例如，GPT-3、BERT、RoBERTa等。",
+            "提供的模型选项是否明确标明适用于中文处理？",
+            "是否考虑到了本地GPU内存限制（12G）来选择模型？",
+            "是否有具体的参数调整建议，如学习率、批量大小等？",
+            "是否有使用12G GPU进行训练和推理的优化建议？",
+            "提供的调参步骤是否清晰详细？",
+            "回答是否介绍了如何在本地部署所选模型的详细步骤？",
+            "是否有适合12G GPU的具体部署指南？",
+            "部署是否包括环境搭建、依赖安装等详细过程？",
+            "回答是否包含相关教程或文档的链接？",
+            "提供的资源是否易于访问和理解？",
+            "是否参照了现有的权威资源（如官方文档、社区教程等）？",
+            "回答是否考虑了实际的操作可行性？",
+            "提供的指南是否能够切实执行并解决实际问题？",
+            "回答是否涵盖了模型实际应用中的常见问题及解决方案？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "我正在编写一个Linux内核模块，尝试在内存中的虚拟地址0x100000（及以上）处存储可执行的shell代码，但看起来这个地址没有被映射。我该如何确保这个内存区域被映射？",
+        "checklist": [
+            "回答是否详细描述了如何通过内核API或函数来确保指定的虚拟地址被映射？",
+            "是否提到了必要的内核头文件或依赖项？",
+            "回答是否讨论了如何设置适当的权限以确保shell代码在该区域可读、可写和可执行？",
+            "是否包括了权限设置所需的具体代码示例？",
+            "回答是否包含如何检查内存映射过程中可能出现的错误，并提供解决方案？",
+            "是否讨论了如何处理内核模块中的异常情况？",
+            "回答中是否包含一个完整的代码示例，展示了如何映射该内存区域并存储shell代码？",
+            "代码示例是否解释了每一步的功能和必要性？",
+            "回答中是否讨论了内存管理的考虑事项，如内存碎片和映射表的效率？",
+            "是否提到了需避免的潜在问题，如内核内存泄漏？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "请帮我优化代码？\\n\\n```python\\nimport re\\nimport random\\n\\n# roll result enum\\n# 骰子结果枚举\\nclass Fail():\\n    def __repr__(self):\\n        return \\\"FAIL\\\"\\nFAIL = Fail()\\n\\nclass Partial():\\n    def __repr__(self):\\n        return \\\"PARTIAL\\\"\\nPARTIAL = Partial()\\n\\nclass Success():\\n    def __repr__(self):\\n        return \\\"SUCCESS\\\"\\nSUCCESS = Success()\\n\\nclass Critical():\\n    def __repr__(self):\\n        return \\\"CRITICAL\\\"\\nCRITICAL = Critical()\\n\\n\\ndef roll(n):\\n    \\\"\\\"\\\"Roll nD6 and return a list of rolls\\\"\\\"\\\"\\n    return [random.randint(1, 6) for _ in range(n)]\\n\\ndef determine_result(rolls):\\n    \\\"\\\"\\\"Determine the result based on the rolls\\\"\\\"\\\"\\n    if rolls.count(6) >= 3:\\n        return CRITICAL\\n    if 6 in rolls:\\n        return SUCCESS\\n    if rolls.count(5) >= 3:\\n        return SUCCESS\\n    if 5  in rolls:\\n        return PARTIAL\\n    if 4 in rolls:\\n        return PARTIAL\\n    return FAIL\\n\\ndef make_roll(skill = 0, stat = 0, difficulty = 0, help = False, bargain = False):\\n    \\\"\\\"\\\"Make a roll with the given skill, stat, and difficulty\\\"\\\"\\\"\\n    n = skill + stat + difficulty + (1 if help else 0) + (1 if bargain else 0)\\n    if n < 1:\\n        return [min(roll(2))]\\n    return roll(n)\\n\\ndef make_roll(roll):\\n    \\\"\\\"\\\"Make a roll with the given skill, stat, and difficulty\\\"\\\"\\\"\\n    make_roll(roll.skill, roll.stat, roll.difficulty, roll.help, roll.bargain)\\n\\n\\nrolls = make_roll(2, 2, -2, True, False)\\nresult = determine_result(rolls)\\nprint(rolls)\\nprint(result)\\n\\n# roll 3D6 10000 times and print the number of each result\\n# 投掷3D6 10000次并打印每个结果的数量\\nrolls = [determine_result(make_roll(2, 2, -2, True, False)) for _ in range(10000)]\\n\\n\\n# estimate the probability of each result\\n# 估计每个结果的概率\\nprint(\\\"FAIL: \\\", rolls.count(FAIL) / len(rolls))\\nprint(\\\"PARTIAL: \\\", rolls.count(PARTIAL) / len(rolls))\\nprint(\\\"SUCCESS: \\\", rolls.count(SUCCESS) / len(rolls))\\nprint(\\\"CRITICAL: \\\", rolls.count(CRITICAL) / len(rolls))\\n```\\n",
+        "checklist": [
+            "代码是否包含有意义的注释，帮助理解其功能和意图？",
+            "变量和函数名是否清晰明了，并能够反映其用途？",
+            "代码的结构和缩进是否符合良好编程规范，易于阅读和维护？",
+            "是否消除了不必要的重复代码？",
+            "是否有未使用的变量或函数？",
+            "如果有重复的逻辑，是否进行了重构以减少冗余？",
+            "每个函数的职责是否单一且明确？",
+            "函数参数和返回值是否合理并得到充分利用？",
+            "函数是否正确调用，且参数传递无误？",
+            "是否有可能提高随机数生成和处理的效率？",
+            "代码是否有需要并行化或使用更高效算法之处？",
+            "是否添加了对异常情况的处理，确保代码在异常条件下能够正常工作或优雅失败？",
+            "是否对潜在的边界条件（如输入参数为0或者负数）进行了充分考虑并处理？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "下列哪个命令能查找当前目录一个月（30天）以前大于 100M 的日志文件（.log）并删除（）\nA\nfind . -name \"*.log\" -m time +30 -type f -size +100M | xargs rm -rf {};\nB\nfind . -name \"*.log\" -mtime +30 -type f -size +100M | xargs rm -rf {};\nC\nfind . -name \"*.log\" -mtime +30 -type -size 100M | xargs rm -rf {};\nD\nfind . -name \"*.log\" -mtime +30 -type f -size 100M | xargs rm -rf {};",
+        "checklist": [
+            "回答是否选择了正确的命令？",
+            "是否准确无误地识别了选项中的参数和其含义（例如，`-mtime` 和 `-size` 参数）？",
+            "回答是否正确地解释了命令的语法和格式？",
+            "是否识别并解释了命令中可能存在的语法错误或拼写错误（如`-m time` 应为`-mtime`）？",
+            "回答是否清晰地描述了命令的预期效果和操作结果？",
+            "是否解释了每个选项中的参数如何影响命令的执行（例如，`-name \"*.log\"`，`-mtime +30`，`-size +100M`）？",
+            "回答是否考虑了命令执行的安全性（例如，使用`xargs rm -rf`的潜在风险）？",
+            "是否提供了减少风险的建议或替代方法（如先列出文件以供确认）？",
+            "回答是否讨论了命令执行过程中可能遇到的任何其他问题或限制（例如，目录权限）？",
+            "如果有其他问题或限制，是否提供了相应的解决方案或替代命令？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "local func\nfunc = function(a)\n local x = a + 3\n if x > 120 then\n  return 46\n else\n  return func(x)\n end\nend\nprint(func(0))\n上述代码输出什么？",
+        "checklist": [
+            "回答是否显示了对代码逻辑的深刻理解？",
+            "是否正确分析了函数`func`的工作原理？（如递归的理解）",
+            "回答是否详细描述了递归的每个步骤及其终止条件？ ",
+            "是否准确跟踪了每一步的参数和返回值变化？",
+            "回答是否正确识别了代码的初始条件？ 被调用时的初始值（即`a=0`）？",
+            "回答是否正确计算并陈述了最终的输出值？",
+            "是否解释了为什么会得到这个输出值？",
+            "回答是否考虑并讨论了不同输入值（如负值或大值）如何影响函数的行为？",
+            "是否展示了对各种可能结果的合理预期和解释？"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "[Human]:请根据问题以及下述的表名和字段信息生成指定的sql语句，其中字段以字段名:注释的形式给出。表1的字段信息为[bc_type:BC类型，b=天猫，c=淘宝,brand_id:品牌ID,brand_name:品牌名称,cate_id:类目ID,cate_level1_id:一级类目ID,cate_level1_name:一级类目名称,cate_level2_id:二级类目ID,cate_level2_name:二级类目名称,cate_name:类目名称,channel_name:渠道名称,client_code:客户端编码。taobao=手机淘宝app，bLiveC=直播app，tmall=天猫app，weibo=微博，xianyu=闲鱼app;,clk_1d:点击次数,confirm_ord_amt_1d:确认收货订单金额,confirm_ord_cnt_1d:确认收货订单数,confirm_ord_itm_qty_1d:确认收货商品件数,coupon_amt_1d_platform:平台优惠金额，平台出资品类券的金额,coupon_amt_1d_slr:商家优惠金额，商家出资品类券的金额,device_type:设备类型，pc/无线,ds:业务日期分区（YYYYMMDD）,exp_1d:曝光次数,ind1_id:行业大组ID,ind1_name:行业大组名称,item_id:商品ID,item_title:商品名称,mod_name:模块名称,mord_city:订单城市名称,mord_prov:订单省份名称,obj_pv_1d:进店次数,order_id:订单ID,pay_ord_amt_1d:支付金额,pay_ord_cnt_1d:支付订单数,pay_ord_itm_qty_1d:支付商品件数,pay_ord_post_amt_1d:支付邮费金额,pay_time:订单支付时间,se_keyword:搜索关键词,seller_id:商家ID,seller_nick:商家昵称,shop_name:店铺名称,shoppv_1d:店铺pv,sku_id:SKU_ID,spu_id:SPU_ID,spu_title:SPU名称,succ_time:订单完成时间,visitor_id:访客ID，买家ID,visitor_nick:买家昵称,xcat1_id:一级大类ID,xcat1_name:一级大类名称,xcat2_id:二级大类ID,xcat2_name:二级大类名称,xcat3_id:三级大类ID,xcat3_name:三级大类名称]\\t表1是:logic.dws_cia_chl_itm_byr_1d\\t问题:猫砂20230531-20230620购买的用户数有多少在2024年5月19号到2024年6月5号回来购买了，还有多少加购未购。(猫砂可以从cate_name='猫砂'中取得)[Assistant]:",
+        "checklist": [
+            "回答是否正确设置了两个时间段作为条件：[2023年5月31日到2023年6月20日],[2024年5月19日到2024年6月5日]？",
+            "是否正确识别并包含与“猫砂”相关的记录[cate_name='猫砂']？",
+            "回答是否包含了从初始时间范围内完成的成交订单的用户数（用户数筛选）？",
+            "是否确保这些用户在2024年5月19日到2024年6月5日期间有回购行为？（用户在第二时间范围内的符合交易记录的筛选）",
+            "回答是否确保正确计算并筛选出在第二个时间段有完成购买行为的用户数量？",
+            "是否能正确区分再次购买用户数和进行了加购操作但未完成购买的用户数？",
+            "生成的SQL语句是否具备逻辑正确性，查询条件、关联字段及操作均合理有效？",
+            "是否能够正确结合表格中涉及的字段信息来有效输出所需的数据列？",
+            "回答是否考虑到了多个值过滤、多表关联或CTE（公用表表达式）等复杂操作？",
+            "SQL答案全流程运行是否具备高效性、无冗余、多条件嵌套过滤等？"
         ],
         "category": "Coding"
     }

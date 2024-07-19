@@ -1,118 +1,34 @@
 [
     {
-        "instruction": "clean this up?\n\n```python\nimport re\nimport random\n\n# roll result enum\nclass Fail():\n    def __repr__(self):\n        return \"FAIL\"\nFAIL = Fail()\n\nclass Partial():\n    def __repr__(self):\n        return \"PARTIAL\"\nPARTIAL = Partial()\n\nclass Success():\n    def __repr__(self):\n        return \"SUCCESS\"\nSUCCESS = Success()\n\nclass Critical():\n    def __repr__(self):\n        return \"CRITICAL\"\nCRITICAL = Critical()\n\n\ndef roll(n):\n    \"\"\"Roll nD6 and return a list of rolls\"\"\"\n    return [random.randint(1, 6) for _ in range(n)]\n\ndef determine_result(rolls):\n    \"\"\"Determine the result based on the rolls\"\"\"\n    if rolls.count(6) >= 3:\n        return CRITICAL\n    if 6 in rolls:\n        return SUCCESS\n    if rolls.count(5) >= 3:\n        return SUCCESS\n    if 5  in rolls:\n        return PARTIAL\n    if 4 in rolls:\n        return PARTIAL\n    return FAIL\n\ndef make_roll(skill = 0, stat = 0, difficulty = 0, help = False, bargain = False):\n    \"\"\"Make a roll with the given skill, stat, and difficulty\"\"\"\n    n = skill + stat + difficulty + (1 if help else 0) + (1 if bargain else 0)\n    if n < 1:\n        return [min(roll(2))]\n    return roll(n)\n\ndef make_roll(roll):\n    \"\"\"Make a roll with the given skill, stat, and difficulty\"\"\"\n    make_roll(roll.skill, roll.stat, roll.difficulty, roll.help, roll.bargain)\n\n\nrolls = make_roll(2, 2, -2, True, False)\nresult = determine_result(rolls)\nprint(rolls)\nprint(result)\n\n# roll 3D6 10000 times and print the number of each result\nrolls = [determine_result(make_roll(2, 2, -2, True, False)) for _ in range(10000)]\n\n\n# estimate the probability of each result\nprint(\"FAIL: \", rolls.count(FAIL) / len(rolls))\nprint(\"PARTIAL: \", rolls.count(PARTIAL) / len(rolls))\nprint(\"SUCCESS: \", rolls.count(SUCCESS) / len(rolls))\nprint(\"CRITICAL: \", rolls.count(CRITICAL) / len(rolls))\n```",
+        "instruction": "In what order should I learn Deep Learning from the foundations such as matrices and vectors all the way to transformers?",
         "checklist": [
-            "Does the response improve the readability and structure of the code?",
-            "Are unnecessary lines, redundant functions, or duplicate code removed?",
-            "Does the cleaned-up code maintain the original functionality and logic?",
-            "Are there any logical errors introduced during the cleanup process?",
-            "Are the classes and functions organized logically and cohesively?",
-            "Does the code follow best practices for Python coding, such as PEP 8 guidelines?",
-            "Are the function docstrings and comments clear and informative?",
-            "Is there any missing documentation that should be added for better understanding?",
-            "Is the cleaned-up code efficient and performant?"
+            "Does the response start by recommending foundational mathematical concepts such as matrices and vectors?",
+            "Are essential linear algebra topics like matrix operations, eigenvectors, and eigenvalues included?",
+            "Does the response recommend learning fundamental principles of machine learning before diving into deep learning?",
+            "Are topics such as supervised and unsupervised learning, and basic algorithms like linear regression and decision trees covered?",
+            "Does the response suggest starting with foundational deep learning concepts such as artificial neural networks (ANNs), activation functions, and backpropagation?",
+            "Are basic neural network architectures like feedforward neural networks and simple convolutional neural networks (CNNs) included?",
+            "Does the response outline more advanced deep learning topics such as recurrent neural networks (RNNs), long short-term memory (LSTM) networks, and generative adversarial networks (GANs)?",
+            "Are the key concepts and applications of these advanced architectures explained?",
+            "Does the response eventually lead to current state-of-the-art models and techniques such as transformers and attention mechanisms?",
+            "Are resources or suggestions provided to explore these complex models in depth?",
+            "Is there guidance on practical implementation tools and frameworks such as TensorFlow or PyTorch?"
         ],
         "category": "Coding"
     },
     {
-        "instruction": "Give me boilerplate python code for flask app with users",
+        "instruction": "What is a good way to calculate the nucleation rate for a cosmological phase transition?",
         "checklist": [
-            "Does the response include the necessary code to set up a basic Flask app?",
-            "Are the necessary imports for Flask and other related libraries included?",
-            "Does the response include boilerplate code for user registration and login functionality?",
-            "Is there provision for password hashing and authentication (e.g., using Flask-Login or similar library)?",
-            "Are the examples of database configuration and connection provided, such as using SQLAlchemy or another ORM?",
-            "Does the response include models or schemas for user data, including fields for username, email, and password?",
-            "Are there specified routes for user-related actions such as registering, logging in, logging out, and viewing user profiles?",
-            "Are the views or route functions adequately structured and do they return appropriate responses or templates?",
-            "Is there basic error handling in place for common issues like user already exists, wrong password, or invalid email?",
-            "Are security best practices adhered to, such as avoiding plaintext passwords or sensitive data exposure?",
-            "Are templates for HTML rendering included if applicable (e.g., login.html, register.html)?",
-            "Does the code structure adhere to the MVC pattern or other good coding practices?"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "write python code for fastchat to listen on a port and answer a typed question as well as follow up questions",
-        "checklist": [
-            "Does the Python code include functionality for FastChat to listen on a specified port?",
-            "Does the code enable FastChat to answer an initial typed question?",
-            "Does the code support handling follow-up questions in the same session?",
-            "Is the transition between initial and follow-up questions seamless and contextually aware?",
-            "Are there clear instructions for setting up the server to listen on a specified port?",
-            "Does the code include error handling for cases where the port is already in use or restricted?",
-            "Are all necessary libraries and dependencies imported and correctly utilized?",
-            "Is there documentation or a requirements list for installing needed packages?",
-            "Is the code well-organized and easy to read?",
-            "Are there comments or documentation explaining key sections of the code, particularly the setup and interaction handling?"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "how can i use css flexbox to put an image on the same line as a paragraph and have the paragraph automatically format itself around the top and bottom of the picture",
-        "checklist": [
-            "Does the response clearly explain how to set up a flexbox container for the parent element?",
-            "Are the required CSS properties for the flex container (`display: flex;`) specified?",
-            "Does the response provide instructions on how to align the image and paragraph on the same line using flex properties?",
-            "Are specific CSS properties like `align-items` or `justify-content` explained to manage the alignment and spacing?",
-            "Are clear CSS rules provided to ensure the image and paragraph align properly?",
-            "Does the response explain how to use flex properties (`flex`, `margin`, etc.) to adjust the formatting around the image?",
-            "Does the response consider responsive design and provide tips or examples for making sure the layout works well on different screen sizes?",
-            "Does the response include solutions for having the text wrap around the top and bottom of the image?",
-            "Are advanced techniques or additional CSS properties (such as float, if necessary) discussed to achieve the desired layout?",
-            "Are the provided CSS codes correctly formatted and free of syntax errors?"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "Act as a MIT Computer Scientist.  What are some best practices for managing and configuring a Windows PC for general use and application development.  Consider multiple user accounts by one user.  Consider cybersecurity.  Consider a development environment for Github repo.",
-        "checklist": [
-            "Does the response include best practices for setting up and managing multiple user accounts on a Windows PC?",
-            "Are guidelines for customizing user profiles and permissions for different types of users (e.g., admin vs. standard users) provided?",
-            "Does the response outline essential cybersecurity measures for a Windows PC (e.g., antivirus, firewall, regular updates)?",
-            "Are recommendations given for secure account practices, such as strong password policies and multi-factor authentication?",
-            "Does the response provide instructions for setting up a development environment suitable for GitHub repositories?",
-            "Are tools and software needed for development (e.g., Git, IDEs, package managers) listed and explained?",
-            "Are best practices for using Git and GitHub, such as repository management and branch strategies, discussed?",
-            "Does the response cover secure ways to authenticate and manage GitHub credentials on a Windows PC?",
-            "Does the response include tips for configuring the Windows environment to enhance performance and usability for development?",
-            "Are routine maintenance practices for keeping the development environment and PC running smoothly (e.g., disk cleanup, software updates) mentioned?",
-            "Are secure coding practices and guidelines for safeguarding code repositories against vulnerabilities mentioned?",
-            "Does the response suggest methods or tools for backing up important data and critical development files?",
-            "Are instructions on setting up recovery systems or restore points provided?",
-            "Are recommendations for configuring a secure and development-friendly network environment included?",
-            "Does the response address how to manage privacy settings on Windows to protect user data and activities, especially in a development context?",
-            "Are there any mentions of compliance with legal and organizational standards, especially if the development involves sensitive or regulated data?"
-        ],
-        "category": "Coding"
-    },
-    {
-        "instruction": "I want you to act as an experienced software developer. I will provide information about a web app requirements. It will be your job to come up with a system connection architecture, a specific list of helper code libraries, a clear list of 5 sprint tickets from the  project setup, and a detailed list of tasks for each of such tickets to develop an scalable and secure app with NodeJS, SQL and React. My request is this: 'I desire a system that allow users to register and save information related to mechanical devices inventory (name, reference, quantity, etc) according to their roles. There will be user, staff and admin roles. Users should be able to read all and to update individual records. Staff could also add new records and submit bulk updates. Admin also should create and eliminate entities like ddbb fields and users'. Implement the best practices on your proposal",
-        "checklist": [
-            "Does the response provide a clear and well-organized system connection architecture for the web app?",
-            "Are the roles and permissions (user, staff, admin) properly integrated into the architectural design?",
-            "Is there a secure and scalable data flow between the front-end, back-end, and database?",
-            "Are best practices followed in terms of security, scalability, and performance?",
-            "Are APIs, database connections, and front-end interactions clearly defined?",
-            "Does the response include a specific and relevant list of helper code libraries for NodeJS, SQL, and React?",
-            "Are the libraries up-to-date and widely recognized for best practices in security and performance?",
-            "Are explanations provided for why each library is chosen and how it will be used in the project?",
-            "Do the libraries cover all necessary functionalities (e.g., authentication, data validation, state management)?",
-            "Are there libraries included for testing and debugging?",
-            "Are the five sprint tickets clearly defined and logically organized for project setup and initial development?",
-            "Do the tickets include enough detail to understand the scope of the work required?",
-            "Are priority levels assigned to each sprint ticket?",
-            "Is there a clear timeline or deadline associated with each ticket?",
-            "Are any dependencies between tickets identified and managed?",
-            "Does the response provide a detailed list of tasks for each of the five sprint tickets?",
-            "Are the tasks specific, clear, and actionable?",
-            "Are task durations and required resources (e.g., team members) clearly identified?",
-            "Are security and scalability considerations included in each task?",
-            "Do the tasks collectively ensure a smooth workflow and progress towards the overall project goals?",
-            "Does the response mention specific best practices in software development (e.g., code reviews, continuous integration)?",
-            "Are security measures and protocols highlighted and integrated into the development process?",
-            "Is scalability considered at each stage of development?",
-            "Are testing and validation methods described for ensuring code quality and functionality?"
+            "Does the response provide a comprehensive explanation of the theoretical background necessary to understand cosmological phase transitions?",
+            "Are key concepts and terminologies relevant to nucleation rates clearly defined?",
+            "Does the response include the appropriate mathematical equations and formulas needed to calculate the nucleation rate?",
+            "Are the steps for deriving and solving these equations clearly outlined and explained?",
+            "Does the response specify the physical parameters needed for the calculations (e.g., temperature, energy barriers, free energy differences)?",
+            "Are the units of measurement and any necessary conversions clearly stated?",
+            "Does the response describe the methodology or techniques used to estimate or compute nucleation rates (e.g., numerical simulation, analytical models)?",
+            "Are any assumptions or approximations discussed and justified?",
+            "Does the response provide examples or applications that illustrate the process of calculating nucleation rates for cosmological phase transitions?",
+            "Are any potential challenges, limitations, or considerations discussed in the context of these examples?"
         ],
         "category": "Coding"
     },
@@ -133,63 +49,279 @@
         "category": "Coding"
     },
     {
-        "instruction": "what are some good popular engines to develop web build games? list pros and cons of each, bonus points if it is unlikely to be outdated soon",
+        "instruction": "write pcre regex for not containing  C:\\",
         "checklist": [
-            "Does the response include a list of several popular engines for developing web-based games?",
-            "Are the engines mentioned known and widely used in the game development community?",
-            "Does the response provide a detailed list of pros for each game engine?",
-            "Does the response include relevant cons for each game engine?",
-            "Does the response comment on the likelihood of each engine remaining relevant and up-to-date in the near future?",
-            "Are there any credible insights or references that support the claim of its longevity or potential for becoming outdated?",
-            "Does the response include information on what types of web build games each engine is best suited for?",
-            "Are specific features or strengths of each engine highlighted that make them especially good for certain types of web games?",
-            "Does the response go beyond basic pros and cons to provide extra valuable information, such as official support, community resources, or unique features that distinguish each engine?",
-            "Does the response include practical advice for choosing between the engines based on specific needs or goals?"
+            "Does the response provide a syntactically correct PCRE (Perl Compatible Regular Expressions) regular expression?",
+            "Does the regex correctly negate the presence of \"C:\\\\\" within the provided string or text?",
+            "Are the backslashes within the \"C:\\\\\" properly escaped?",
+            "Does the regex properly handle edge cases, such as variations in capitalization or inclusion of similar patterns?",
+            "Is the regex efficient and not overly complex, ensuring it performs well on larger texts?",
+            "Is the PCRE regex provided a valid regular expression without syntax errors?",
+            "Does the expression correctly ensure that any string containing \"C:\\\\\" is not matched?",
+            "Are the backslashes in \"C:\\\\\" properly escaped (e.g., \"C:\\\\\\\\\" instead of \"C:\\\")?",
+            "Does the regex handle potential edge cases or variations such as different capitalization (e.g., \"c:\\\\\", \"c:\\\\\\\\\") and similar patterns?"
         ],
         "category": "Coding"
     },
     {
-        "instruction": "how would you solve the climate change problem. Provide a detailed strategy for the next 20 years",
+        "instruction": "A table-tennis championship for $2^n$ players is organized as a knock-out tournament with $n$ rounds, the last round being the final. Two players are chosen at random. Calculate the probability that they meet: (a) in the first round, (b) in the final, (c) in any round.",
         "checklist": [
-            "Does the response present a well-rounded and detailed strategy to address climate change over the next 20 years?",
-            "Are short-term, medium-term, and long-term actions clearly outlined?",
-            "Does the strategy incorporate scientific research and technical innovations to mitigate climate change?",
-            "Are renewable energy sources and technological advancements considered and incorporated?",
-            "Does the strategy propose specific policy and legislative actions at local, national, and international levels?",
-            "Are mechanisms for enforcing these policies and laws included?",
-            "Does the response include an economic and financial plan for funding and supporting the proposed actions?",
-            "Are economic impacts and potential benefits, such as job creation and market growth, addressed?",
-            "Does the strategy emphasize the importance of international cooperation and agreements to combat climate change?",
-            "Are specific international initiatives, frameworks, or agreements referenced or suggested?",
-            "Does the response include initiatives for public engagement and education to promote climate awareness and sustainable practices?",
-            "Are strategies for individual, community, and corporate involvement included?",
-            "Does the strategy include plans for climate adaptation and building resilience in vulnerable communities?",
-            "Are specific actions for protecting ecosystems, infrastructure, and human populations mentioned?",
-            "Are the proposed actions realistic and feasible within the given 20-year timeframe?",
-            "Is there a clear implementation plan with timelines, milestones, and responsible entities identified?",
-            "Does the response include a framework for monitoring progress and evaluating the effectiveness of the implemented strategies?",
-            "Are mechanisms for periodic review and adjustment of the strategy considered?",
-            "Does the strategy address ethical and equity considerations, ensuring fair treatment of all populations, especially marginalized communities?"
+            "Does the response clearly state and understand the structure of a knock-out tournament with $2^n$ players?",
+            "Is the number of rounds ($n$) and its implication on the tournament's progression mentioned?",
+            "Does the response include a calculation or rationale for the probability that two players meet in the first round?",
+            "Is there an explanation and calculation for the probability that the two players meet in the final round?",
+            "Does the response provide a method or formula to calculate the probability that the two players meet in any round?",
+            "Are the mathematical calculations and formulas accurate and appropriate for the problem?",
+            "Are the combinatorial and probability principles correctly applied?",
+            "Is the response logically structured and easy to follow?",
+            "Are the steps in the calculations clearly explained, with each part of the problem addressed systematically?",
+            "Does the response address the general probability question of meeting in any round effectively?",
+            "Is there a coherent conclusion summarizing the probabilities calculated for each scenario (first round, final round, any round)?"
         ],
         "category": "Coding"
     },
     {
-        "instruction": "Write a chrome plugin that saves the contents of the current page",
+        "instruction": "How can i run a gui application on linux when i do not have a screen. I need to test application but it would not start",
         "checklist": [
-            "Does the response include a clear description of the functional requirements of the plugin?",
-            "Does it state what the plugin should specifically accomplish (e.g., save content of the current page)?",
-            "Does the response provide a detailed explanation of the code structure needed to create the plugin?",
-            "Are the necessary technologies and languages specified (e.g., HTML, JavaScript, manifest files)?",
-            "Is there a clear explanation of how the plugin should interact with the browser's API to capture and save page contents?",
-            "Are there specific code snippets included to demonstrate how to develop key components of the plugin?",
-            "Does the response contain a complete example, including the manifest.json and main JavaScript file?",
-            "Are comments included in the code to explain critical sections and their purposes?",
-            "Does the response provide clear instructions on how to install the plugin into the Chrome browser?",
-            "Are there steps included for running and testing the plugin to ensure it works as intended?",
-            "Does the response address the handling of potential errors (e.g., network issues, permissions)?",
-            "Are there suggestions for ensuring the security of the saved content and the plugin itself?",
-            "Does the response consider privacy concerns and inform users how their data will be managed?",
-            "Does the response include a brief overview or documentation that explains how the plugin works?"
+            "Does the response recommend using a Virtual Network Computing (VNC) server or any remote desktop solutions to run the GUI application?",
+            "Are the steps to set up and run the VNC or remote desktop solution on Linux clearly provided?",
+            "Does the response suggest using X11 forwarding over SSH to run the GUI application remotely?",
+            "Are detailed instructions included on how to correctly set up X11 forwarding on the Linux machine and the client machine?",
+            "Does the response mention the possibility of using a headless browser or an emulator to test the GUI application?",
+            "Are the tools and commands required to set up and run the headless browser or emulator outlined?",
+            "Does the response propose using the X Virtual Framebuffer (Xvfb) to create a virtual display for the GUI application?",
+            "Does it include a comprehensive guide on installing, configuring, and running Xvfb on the Linux machine?",
+            "Does the response suggest using Docker containers with GUI support to run the application?",
+            "Are the instructions clear on how to build and run a Docker container that can support GUI applications, including any necessary Docker configurations or additional software?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "You are a data scientist, output a Python script in OOP for a contextual multi armed bandit sampling from 3 models",
+        "checklist": [
+            "Does the response define a class for the contextual multi-armed bandit?",
+            "Are the methods within the class clear and appropriately named for their functions (e.g., for initializing, updating values, and sampling)?",
+            "Does the response specify at least three different models or strategies for the arms of the bandit?",
+            "Are the models integrated into the class in a way that allows for context-based decision making?",
+            "Does the response incorporate the context in the decision-making process for choosing an arm?",
+            "Are there clear explanations or functions detailing how the context is used to influence the sampling process?",
+            "Is the code well-commented, making it easy to follow and understand?",
+            "Does the script handle potential errors or edge cases gracefully, ensuring robustness?",
+            "Are there considerations for the scalability and performance of the bandit algorithm, especially in terms of time and space complexity?",
+            "Does the implementation allow for easy extension to more than three models or arms if needed?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Regex to delect all <g> elements containing a string `transform=\"matrix(0.998638,0,0,-0.998638,0.39215,439.799858)\"` please. there can be line breaks too.",
+        "checklist": [
+            "Does the response include a regex pattern that accurately identifies all `<g>` elements containing the specified string `transform=\"matrix(0.998638,0,0,-0.998638,0.39215,439.799858)\"`?",
+            "Does the regex account for potential line breaks within the attributes or elements?",
+            "Is the regex precise enough to avoid matching unintended elements or attributes?",
+            "Does the regex work correctly across different environments and input variations?",
+            "Is the regex pattern written in a way that is easy to understand and modify if needed?",
+            "Are there comments or explanations provided to clarify the structure and purpose of the regex?",
+            "Is the regex optimized for performance, avoiding excessive backtracking or unnecessary complexity?",
+            "Does the regex execute efficiently on large XML or HTML documents?",
+            "Does the regex allow for slight variations in spacing or attribute order within the `<g>` element?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "how does memory affect performance of aws lambda written in nodejs",
+        "checklist": [
+            "Does the response explain how memory allocation affects the performance of AWS Lambda functions?",
+            "Are specific details provided on how different memory sizes can impact execution speed and resource utilization?",
+            "Does the response discuss specific performance metrics that are influenced by memory settings (e.g., execution time, latency, cold start duration)?",
+            "Are any benchmarks or examples provided to illustrate the relationship between memory and performance?",
+            "Does the response address the cost implications of varying memory allocations?",
+            "Is there a discussion of how to balance performance improvements with cost efficiency?",
+            "Does the response include information specific to AWS Lambda functions written in Node.js (e.g., V8 engine optimizations, garbage collection)?",
+            "Are best practices or tips for optimizing memory usage in Node.js highlighted?",
+            "Are strategies for troubleshooting and optimizing memory-related performance issues discussed?",
+            "Does the response provide guidance on tools or techniques to monitor and fine-tune memory settings?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "I have black and white images with 1 pixel width white horizonal lines going through the image. How to detect the lines and remove it?",
+        "checklist": [
+            "Does the response explain a method or algorithm for detecting the 1-pixel width white horizontal lines in the black and white images?",
+            "Is the method suitable for accurately identifying the lines without affecting other parts of the image?",
+            "Does the response provide a clear technique or algorithm for removing the detected lines?",
+            "Does the method include steps or pseudo-code for implementation?",
+            "Does the response discuss how to ensure the rest of the image remains intact and is not adversely affected by the detection and removal process?",
+            "Are there suggestions for preserving the quality and details of the original image?",
+            "Does the response mention specific tools, software, or libraries that can be used to detect and remove the lines?",
+            "Are any code snippets or examples provided to assist with the implementation process?",
+            "Does the response consider the performance and efficiency of the proposed detection and removal methods?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "I want a Apache conf file to reverse proxy to a Wordpress docker that is running on port 8001 in the same machine",
+        "checklist": [
+            "Does the conf file include the `ProxyPass` and `ProxyPassReverse` directives that point to the correct URL (e.g., `http://localhost:8001`)?",
+            "Are the paths for the `ProxyPass` and `ProxyPassReverse` directives correctly specified to handle HTTP requests and responses?",
+            "Does the conf file define a `<VirtualHost>` block with the appropriate IP address and port (e.g., `<VirtualHost *:80>`)?",
+            "Is the `ServerName` directive correctly set with the domain name you intend to use for your WordPress site?",
+            "Does the conf file include the necessary configurations to enable the proxy modules (e.g., `LoadModule proxy_module modules/mod_proxy.so` and `LoadModule proxy_http_module modules/mod_proxy_http.so`)?",
+            "Are any additional proxy-related directives included to handle common scenarios (e.g., `ProxyPreserveHost On`)?",
+            "Are there directives for handling and logging errors appropriately (e.g., `ErrorLog`, `CustomLog`)?",
+            "Is there configuration for `ProxyErrorOverride`, if needed, to ensure proper error handling?",
+            "Does the conf file include any security-related settings to protect the proxy configuration (e.g., `ProxyRequests Off`, `Require all denied`, `Allow from localhost`) ?",
+            "Are there any performance optimization directives included, such as caching settings or connection pooling, if applicable?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Can you write a service catalogue for a Microsoft M365 consultancy focusing on Data, Data Management, Automation and A.I.  The focus should be on audits, roadmaps, advice and cutting edge technologies within the M365 ecosystem but not be its only focus",
+        "checklist": [
+            "Does the response include a detailed description of each service offering such as audits, roadmaps, advice, and deployments using cutting-edge technologies?",
+            "Are the services relevant to Data, Data Management, Automation, and A.I. within the Microsoft M365 ecosystem while also mentioning other related areas?",
+            "Are all aspects of Data, Data Management, Automation, and A.I. covered comprehensively?",
+            "Are the services specific to the needs of businesses using Microsoft M365 clearly addressed?",
+            "Does the response mention specific cutting-edge technologies and tools within the Microsoft M365 ecosystem (such as Power Automate, Azure AI, etc.)?",
+            "Are the advantages of using these technologies clearly explained?",
+            "Does the response provide detailed explanations of how audits, roadmaps, and advisory services would be conducted and what clients can expect from these services?",
+            "Are the outcomes and benefits of each service clearly articulated?",
+            "Is there a focus on providing tailored solutions and personalized advice to meet specific client needs?",
+            "Are there examples or scenarios demonstrating how the consultancy would implement these services to solve real-world problems?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "I want to make a badminton restring tracker in Django. I need to record customers, restrings and payments. Design me the models.py",
+        "checklist": [
+            "Does the response include a `Customer` model?",
+            "Are the essential fields for a customer (e.g., name, contact information) present in the `Customer` model?",
+            "Are field types appropriately chosen for each attribute (e.g., CharField, EmailField)?",
+            "Does the response include a `Restring` model?",
+            "Does the `Restring` model have fields to record details specific to restringing (e.g., string type, tension, date of restringing)?",
+            "Is there a foreign key linking the `Restring` model to the `Customer` model to associate restring jobs with customers?",
+            "Does the response include a `Payment` model?",
+            "Are fields related to payments included (e.g., amount, date of payment, payment method)?",
+            "Is there a foreign key linking the `Payment` model to either the `Customer` or `Restring` model as appropriate?",
+            "Are the relationships between models (e.g., OneToMany, ForeignKey) handled appropriately?",
+            "Are constraints and validations (e.g., null constraints, default values) applied where necessary to maintain data integrity?",
+            "Does the code follow Django and Python conventions for model definitions?",
+            "Is the code clear, well-structured, and free of syntax errors?",
+            "Are appropriate metadata options and helper methods (e.g., `__str__` method) included to enhance model usability?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "I'm having trouble with css. I have two buttons in a parent container and I want one to be left aligned and the other right aligned but using flex for responsive reasons.",
+        "checklist": [
+            "Does the response clearly describe how to achieve left and right alignment of the buttons using CSS flexbox?",
+            "Are specific CSS properties and values mentioned to achieve the desired alignment (e.g., `justify-content`, `align-items`)?",
+            "Does the response include the correct syntax?",
+            "Does the response address how the solution will maintain responsiveness across different screen sizes?",
+            "Are any additional CSS properties or media queries suggested for better responsive design?",
+            "Is a code snippet included that demonstrates the implementation of the described solution?",
+            "Is the code snippet free of errors and correctly formatted?",
+            "Does the response explain how the parent container should be set up to ensure proper alignment?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Write a C# program that calculates the pi up to 5 decimals and then XOR's the result twice.",
+        "checklist": [
+            "Does the response include a method or algorithm to accurately calculate the value of pi up to 5 decimal places?",
+            "Is the code for calculating pi implemented correctly without errors?",
+            "Does the response include the implementation of the XOR operation on the calculated value of pi?",
+            "Is the XOR operation executed twice as specified in the question?",
+            "Is the code well-structured, readable, and follows best practices for C# programming?",
+            "Are there comments or documentation within the code to explain key sections and logic?",
+            "Does the response handle the input (if any) and output the final result correctly?",
+            "Are edge cases or errors appropriately managed, ensuring robustness of the program?",
+            "Is there evidence that the code has been tested and the results verified for correctness?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "When using Docker, the `docker build .` command can be used to build an image, assuming you have a Dockerfile in your current directory. How do you undo this build? By this I mean, how do I get back to the spot I was before I ran the `docker build .` command?",
+        "checklist": [
+            "Does the response address how to undo a Docker image build?",
+            "Does it specify how to identify the created image (e.g., using the `docker images` command)?",
+            "Does the response explain how to remove the created Docker image (e.g., `docker rmi <image_id>` or `docker rmi <image_name>`)?",
+            "Are all related images and potential dangling images considered and removed if necessary?",
+            "Does the response address how to clean up any intermediate layers or dangling images (e.g., `docker image prune`, `docker system prune`)?",
+            "Does the response discuss whether there are any other steps needed to restore the Docker state to its previous condition?",
+            "Does the response include instructions on how to verify that the Docker environment is back to its original state (e.g., checking `docker images` and `docker ps -a` outputs)?",
+            "Does the response explain how to handle and possibly remove any stopped containers that might have been created during the build process (e.g., `docker container prune`)?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "When training my neural network, I can get a loss below 4.5 at 10,000 iterations. The latest attempt includes trying batch sizes of 512, 1024, and 2048 while keeping the block size  at a 4. All of this is done in the context of nanoGPT. It's worth noting that when I ran a batch size of 12 and a block size of 1024, I managed to get the loss down to 4.32 after 10,000 iterations. In your opinion and experience, what steps can I take in order to reduce the loss? Please keep in mind that my video card has 12GB of RAM and the vocabulary is made up of 20,000 words. Each sentence is made up of exactly four tokens. Do you have any suggestions how I could improve the neural network, please?",
+        "checklist": [
+            "Does the response suggest specific adjustments to hyperparameters other than batch size and block size, such as learning rate, number of epochs, or optimizer choice?",
+            "Are the suggestions for hyperparameter changes backed by rationale or evidence from experience or literature?",
+            "Does the response recommend modifications to the neural network architecture, such as adding more layers, changing the type of layers, or utilizing advanced techniques like dropout, batch normalization, or residual connections?",
+            "Are the architecture suggestions practical given the limitations of the video card's 12GB of RAM?",
+            "Does the response address potential improvements in the data preprocessing steps, such as normalization, data augmentation, or handling of outliers or imbalanced data?",
+            "Are there suggestions for increasing the quality or diversity of the training dataset?",
+            "Does the response explore advanced training techniques such as learning rate schedules, gradient clipping, or ensemble methods?",
+            "Are recommendations given on the use of regularization techniques to prevent overfitting or underfitting?",
+            "Does the response include methods for diagnosing and troubleshooting underperformance, such as analyzing training and validation curves, performing cross-validation, or using performance metrics aside from loss?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "how can i make my discord bot play an audioclip using the discord interactions api ?",
+        "checklist": [
+            "Does the response explain the necessary steps to interact with the Discord Interactions API for playing audio clips?",
+            "Are any necessary libraries or dependencies clearly identified?",
+            "Does the response provide a clear, step-by-step guide on how to implement the functionality in the bot?",
+            "Are code snippets or examples included to illustrate important steps?",
+            "Does the response explain how to properly configure permissions and bot settings to allow for audio playback?",
+            "Are instructions given on setting up the necessary roles and permissions within Discord?",
+            "Does the response address common errors or issues that might arise during implementation?",
+            "Are debugging tips or troubleshooting steps provided?",
+            "Does the response describe how to create commands or interactions within Discord for users to trigger the audio clip?",
+            "Are there guidelines for ensuring a smooth user experience and handling user inputs effectively?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "how can I run an ai chatbot model using python on very low resource systems, show me some code",
+        "checklist": [
+            "Does the response include a concise and efficient Python code snippet for running an AI chatbot model?",
+            "Is the code optimized to work on systems with very low resources?",
+            "Does the response offer suggestions or techniques for managing and reducing resource usage (e.g., memory, CPU)?",
+            "Are any specific libraries or frameworks recommended that are lightweight and efficient for such systems?",
+            "Does the response discuss the choice of AI models suitable for deployment on low-resource systems?",
+            "Are there recommendations for pre-trained models or techniques (e.g., distillation, quantization) to further reduce resource requirements?",
+            "Does the response include instructions for setting up the environment and installing necessary dependencies?",
+            "Are the installation instructions simple, clear, and focused on minimizing resource consumption?",
+            "Does the response provide a way to test and validate that the AI chatbot is running correctly and efficiently on a low-resource system?",
+            "Are there recommendations for performance monitoring tools or techniques to ensure the chatbot operates within resource constraints?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Write a python program that implements data storage oriented blockchain that rewards node owners who host data. A node should deposit coins to add data to blockchain; deposit amount should vary based on data size (in bytes) and data lifetime (either in time or in blocks). The deposited amount should be distributed evenly across all nodes hosting that data until it's lifetime is expired. One can increase their data storage deposit to extend storage time. A node should take fees from other nodes for accessing its stored data. A node can \"delete\" their data from blockchain; after that other nodes are not rewarded for storing the data anymore and the original data uploader gets their unused data storage deposit back.",
+        "checklist": [
+            "Does the program implement the addition of data to the blockchain with an initial data deposit?",
+            "Is the deposit amount correctly calculated based on data size (in bytes) and data lifetime (either in time or in blocks)?",
+            "Does the program evenly distribute the deposit amount across all nodes hosting the data?",
+            "Is the distribution mechanism correctly triggered and managed until the data's lifetime expires?",
+            "Does the program allow nodes to increase their data storage deposit to extend the storage time?",
+            "Are the mechanisms for deposit increase adequately documented and functional?",
+            "Does the program implement a fee mechanism for other nodes accessing the stored data?",
+            "Are the access fees correctly managed and transferred to the hosting nodes?",
+            "Can nodes \"delete\" their data from the blockchain, stopping further rewards?",
+            "Does the program ensure the original data uploader gets their unused data storage deposit back after deletion?",
+            "Are the rewards to hosting nodes correctly halted upon data deletion?",
+            "Does the program ensure that data integrity and blockchain coherence are maintained throughout data operations?",
+            "Are there mechanisms to prevent fraudulent activities related to deposit management and data access?",
+            "Does the program implement necessary security measures to ensure that nodes' actions (data storage, access, and deletion) are authenticated and authorized?",
+            "Are there any fallback mechanisms in case of security breaches or errors in transaction processing?",
+            "Is the code well-structured and commented to ensure readability and maintainability?",
+            "Are functions and classes appropriately modularized?",
+            "Does the program include adequate error handling to manage issues such as insufficient deposits, unauthorized data access, and storage/deletion operations?",
+            "Are meaningful error messages provided to guide the users?"
         ],
         "category": "Coding"
     }
