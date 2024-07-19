@@ -1,0 +1,196 @@
+[
+    {
+        "instruction": "clean this up?\n\n```python\nimport re\nimport random\n\n# roll result enum\nclass Fail():\n    def __repr__(self):\n        return \"FAIL\"\nFAIL = Fail()\n\nclass Partial():\n    def __repr__(self):\n        return \"PARTIAL\"\nPARTIAL = Partial()\n\nclass Success():\n    def __repr__(self):\n        return \"SUCCESS\"\nSUCCESS = Success()\n\nclass Critical():\n    def __repr__(self):\n        return \"CRITICAL\"\nCRITICAL = Critical()\n\n\ndef roll(n):\n    \"\"\"Roll nD6 and return a list of rolls\"\"\"\n    return [random.randint(1, 6) for _ in range(n)]\n\ndef determine_result(rolls):\n    \"\"\"Determine the result based on the rolls\"\"\"\n    if rolls.count(6) >= 3:\n        return CRITICAL\n    if 6 in rolls:\n        return SUCCESS\n    if rolls.count(5) >= 3:\n        return SUCCESS\n    if 5  in rolls:\n        return PARTIAL\n    if 4 in rolls:\n        return PARTIAL\n    return FAIL\n\ndef make_roll(skill = 0, stat = 0, difficulty = 0, help = False, bargain = False):\n    \"\"\"Make a roll with the given skill, stat, and difficulty\"\"\"\n    n = skill + stat + difficulty + (1 if help else 0) + (1 if bargain else 0)\n    if n < 1:\n        return [min(roll(2))]\n    return roll(n)\n\ndef make_roll(roll):\n    \"\"\"Make a roll with the given skill, stat, and difficulty\"\"\"\n    make_roll(roll.skill, roll.stat, roll.difficulty, roll.help, roll.bargain)\n\n\nrolls = make_roll(2, 2, -2, True, False)\nresult = determine_result(rolls)\nprint(rolls)\nprint(result)\n\n# roll 3D6 10000 times and print the number of each result\nrolls = [determine_result(make_roll(2, 2, -2, True, False)) for _ in range(10000)]\n\n\n# estimate the probability of each result\nprint(\"FAIL: \", rolls.count(FAIL) / len(rolls))\nprint(\"PARTIAL: \", rolls.count(PARTIAL) / len(rolls))\nprint(\"SUCCESS: \", rolls.count(SUCCESS) / len(rolls))\nprint(\"CRITICAL: \", rolls.count(CRITICAL) / len(rolls))\n```",
+        "checklist": [
+            "Does the response improve the readability and structure of the code?",
+            "Are unnecessary lines, redundant functions, or duplicate code removed?",
+            "Does the cleaned-up code maintain the original functionality and logic?",
+            "Are there any logical errors introduced during the cleanup process?",
+            "Are the classes and functions organized logically and cohesively?",
+            "Does the code follow best practices for Python coding, such as PEP 8 guidelines?",
+            "Are the function docstrings and comments clear and informative?",
+            "Is there any missing documentation that should be added for better understanding?",
+            "Is the cleaned-up code efficient and performant?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Give me boilerplate python code for flask app with users",
+        "checklist": [
+            "Does the response include the necessary code to set up a basic Flask app?",
+            "Are the necessary imports for Flask and other related libraries included?",
+            "Does the response include boilerplate code for user registration and login functionality?",
+            "Is there provision for password hashing and authentication (e.g., using Flask-Login or similar library)?",
+            "Are the examples of database configuration and connection provided, such as using SQLAlchemy or another ORM?",
+            "Does the response include models or schemas for user data, including fields for username, email, and password?",
+            "Are there specified routes for user-related actions such as registering, logging in, logging out, and viewing user profiles?",
+            "Are the views or route functions adequately structured and do they return appropriate responses or templates?",
+            "Is there basic error handling in place for common issues like user already exists, wrong password, or invalid email?",
+            "Are security best practices adhered to, such as avoiding plaintext passwords or sensitive data exposure?",
+            "Are templates for HTML rendering included if applicable (e.g., login.html, register.html)?",
+            "Does the code structure adhere to the MVC pattern or other good coding practices?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "write python code for fastchat to listen on a port and answer a typed question as well as follow up questions",
+        "checklist": [
+            "Does the Python code include functionality for FastChat to listen on a specified port?",
+            "Does the code enable FastChat to answer an initial typed question?",
+            "Does the code support handling follow-up questions in the same session?",
+            "Is the transition between initial and follow-up questions seamless and contextually aware?",
+            "Are there clear instructions for setting up the server to listen on a specified port?",
+            "Does the code include error handling for cases where the port is already in use or restricted?",
+            "Are all necessary libraries and dependencies imported and correctly utilized?",
+            "Is there documentation or a requirements list for installing needed packages?",
+            "Is the code well-organized and easy to read?",
+            "Are there comments or documentation explaining key sections of the code, particularly the setup and interaction handling?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "how can i use css flexbox to put an image on the same line as a paragraph and have the paragraph automatically format itself around the top and bottom of the picture",
+        "checklist": [
+            "Does the response clearly explain how to set up a flexbox container for the parent element?",
+            "Are the required CSS properties for the flex container (`display: flex;`) specified?",
+            "Does the response provide instructions on how to align the image and paragraph on the same line using flex properties?",
+            "Are specific CSS properties like `align-items` or `justify-content` explained to manage the alignment and spacing?",
+            "Are clear CSS rules provided to ensure the image and paragraph align properly?",
+            "Does the response explain how to use flex properties (`flex`, `margin`, etc.) to adjust the formatting around the image?",
+            "Does the response consider responsive design and provide tips or examples for making sure the layout works well on different screen sizes?",
+            "Does the response include solutions for having the text wrap around the top and bottom of the image?",
+            "Are advanced techniques or additional CSS properties (such as float, if necessary) discussed to achieve the desired layout?",
+            "Are the provided CSS codes correctly formatted and free of syntax errors?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Act as a MIT Computer Scientist.  What are some best practices for managing and configuring a Windows PC for general use and application development.  Consider multiple user accounts by one user.  Consider cybersecurity.  Consider a development environment for Github repo.",
+        "checklist": [
+            "Does the response include best practices for setting up and managing multiple user accounts on a Windows PC?",
+            "Are guidelines for customizing user profiles and permissions for different types of users (e.g., admin vs. standard users) provided?",
+            "Does the response outline essential cybersecurity measures for a Windows PC (e.g., antivirus, firewall, regular updates)?",
+            "Are recommendations given for secure account practices, such as strong password policies and multi-factor authentication?",
+            "Does the response provide instructions for setting up a development environment suitable for GitHub repositories?",
+            "Are tools and software needed for development (e.g., Git, IDEs, package managers) listed and explained?",
+            "Are best practices for using Git and GitHub, such as repository management and branch strategies, discussed?",
+            "Does the response cover secure ways to authenticate and manage GitHub credentials on a Windows PC?",
+            "Does the response include tips for configuring the Windows environment to enhance performance and usability for development?",
+            "Are routine maintenance practices for keeping the development environment and PC running smoothly (e.g., disk cleanup, software updates) mentioned?",
+            "Are secure coding practices and guidelines for safeguarding code repositories against vulnerabilities mentioned?",
+            "Does the response suggest methods or tools for backing up important data and critical development files?",
+            "Are instructions on setting up recovery systems or restore points provided?",
+            "Are recommendations for configuring a secure and development-friendly network environment included?",
+            "Does the response address how to manage privacy settings on Windows to protect user data and activities, especially in a development context?",
+            "Are there any mentions of compliance with legal and organizational standards, especially if the development involves sensitive or regulated data?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "I want you to act as an experienced software developer. I will provide information about a web app requirements. It will be your job to come up with a system connection architecture, a specific list of helper code libraries, a clear list of 5 sprint tickets from the  project setup, and a detailed list of tasks for each of such tickets to develop an scalable and secure app with NodeJS, SQL and React. My request is this: 'I desire a system that allow users to register and save information related to mechanical devices inventory (name, reference, quantity, etc) according to their roles. There will be user, staff and admin roles. Users should be able to read all and to update individual records. Staff could also add new records and submit bulk updates. Admin also should create and eliminate entities like ddbb fields and users'. Implement the best practices on your proposal",
+        "checklist": [
+            "Does the response provide a clear and well-organized system connection architecture for the web app?",
+            "Are the roles and permissions (user, staff, admin) properly integrated into the architectural design?",
+            "Is there a secure and scalable data flow between the front-end, back-end, and database?",
+            "Are best practices followed in terms of security, scalability, and performance?",
+            "Are APIs, database connections, and front-end interactions clearly defined?",
+            "Does the response include a specific and relevant list of helper code libraries for NodeJS, SQL, and React?",
+            "Are the libraries up-to-date and widely recognized for best practices in security and performance?",
+            "Are explanations provided for why each library is chosen and how it will be used in the project?",
+            "Do the libraries cover all necessary functionalities (e.g., authentication, data validation, state management)?",
+            "Are there libraries included for testing and debugging?",
+            "Are the five sprint tickets clearly defined and logically organized for project setup and initial development?",
+            "Do the tickets include enough detail to understand the scope of the work required?",
+            "Are priority levels assigned to each sprint ticket?",
+            "Is there a clear timeline or deadline associated with each ticket?",
+            "Are any dependencies between tickets identified and managed?",
+            "Does the response provide a detailed list of tasks for each of the five sprint tickets?",
+            "Are the tasks specific, clear, and actionable?",
+            "Are task durations and required resources (e.g., team members) clearly identified?",
+            "Are security and scalability considerations included in each task?",
+            "Do the tasks collectively ensure a smooth workflow and progress towards the overall project goals?",
+            "Does the response mention specific best practices in software development (e.g., code reviews, continuous integration)?",
+            "Are security measures and protocols highlighted and integrated into the development process?",
+            "Is scalability considered at each stage of development?",
+            "Are testing and validation methods described for ensuring code quality and functionality?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Write a program to compute the Elo scores of a chess tournament.",
+        "checklist": [
+            "Does the program correctly implement the Elo rating algorithm?",
+            "Are all necessary calculations for updating player ratings included (initial ratings, outcome of matches, expected scores, and K-factor adjustments)?",
+            "Does the program correctly handle input and output? (e.g., reading player ratings, match results, and returning updated ratings)?",
+            "Is the input format clearly defined, and does the program handle various input scenarios (such as ties, multiple matches, etc.)?",
+            "Is the code well-organized and easy to read (e.g., using meaningful variable names, functions/methods)?",
+            "Are comments provided to explain the purpose of key sections or complex parts of the code?",
+            "Does the program include error handling to manage potential issues (such as invalid input formats or missing data)?",
+            "Are there checks in place to ensure input data is valid and within expected ranges?",
+            "Is the program efficient in terms of time and space complexity, given the potential size of the tournament data set?",
+            "Does the program avoid unnecessary calculations or redundant data processing?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "what are some good popular engines to develop web build games? list pros and cons of each, bonus points if it is unlikely to be outdated soon",
+        "checklist": [
+            "Does the response include a list of several popular engines for developing web-based games?",
+            "Are the engines mentioned known and widely used in the game development community?",
+            "Does the response provide a detailed list of pros for each game engine?",
+            "Does the response include relevant cons for each game engine?",
+            "Does the response comment on the likelihood of each engine remaining relevant and up-to-date in the near future?",
+            "Are there any credible insights or references that support the claim of its longevity or potential for becoming outdated?",
+            "Does the response include information on what types of web build games each engine is best suited for?",
+            "Are specific features or strengths of each engine highlighted that make them especially good for certain types of web games?",
+            "Does the response go beyond basic pros and cons to provide extra valuable information, such as official support, community resources, or unique features that distinguish each engine?",
+            "Does the response include practical advice for choosing between the engines based on specific needs or goals?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "how would you solve the climate change problem. Provide a detailed strategy for the next 20 years",
+        "checklist": [
+            "Does the response present a well-rounded and detailed strategy to address climate change over the next 20 years?",
+            "Are short-term, medium-term, and long-term actions clearly outlined?",
+            "Does the strategy incorporate scientific research and technical innovations to mitigate climate change?",
+            "Are renewable energy sources and technological advancements considered and incorporated?",
+            "Does the strategy propose specific policy and legislative actions at local, national, and international levels?",
+            "Are mechanisms for enforcing these policies and laws included?",
+            "Does the response include an economic and financial plan for funding and supporting the proposed actions?",
+            "Are economic impacts and potential benefits, such as job creation and market growth, addressed?",
+            "Does the strategy emphasize the importance of international cooperation and agreements to combat climate change?",
+            "Are specific international initiatives, frameworks, or agreements referenced or suggested?",
+            "Does the response include initiatives for public engagement and education to promote climate awareness and sustainable practices?",
+            "Are strategies for individual, community, and corporate involvement included?",
+            "Does the strategy include plans for climate adaptation and building resilience in vulnerable communities?",
+            "Are specific actions for protecting ecosystems, infrastructure, and human populations mentioned?",
+            "Are the proposed actions realistic and feasible within the given 20-year timeframe?",
+            "Is there a clear implementation plan with timelines, milestones, and responsible entities identified?",
+            "Does the response include a framework for monitoring progress and evaluating the effectiveness of the implemented strategies?",
+            "Are mechanisms for periodic review and adjustment of the strategy considered?",
+            "Does the strategy address ethical and equity considerations, ensuring fair treatment of all populations, especially marginalized communities?"
+        ],
+        "category": "Coding"
+    },
+    {
+        "instruction": "Write a chrome plugin that saves the contents of the current page",
+        "checklist": [
+            "Does the response include a clear description of the functional requirements of the plugin?",
+            "Does it state what the plugin should specifically accomplish (e.g., save content of the current page)?",
+            "Does the response provide a detailed explanation of the code structure needed to create the plugin?",
+            "Are the necessary technologies and languages specified (e.g., HTML, JavaScript, manifest files)?",
+            "Is there a clear explanation of how the plugin should interact with the browser's API to capture and save page contents?",
+            "Are there specific code snippets included to demonstrate how to develop key components of the plugin?",
+            "Does the response contain a complete example, including the manifest.json and main JavaScript file?",
+            "Are comments included in the code to explain critical sections and their purposes?",
+            "Does the response provide clear instructions on how to install the plugin into the Chrome browser?",
+            "Are there steps included for running and testing the plugin to ensure it works as intended?",
+            "Does the response address the handling of potential errors (e.g., network issues, permissions)?",
+            "Are there suggestions for ensuring the security of the saved content and the plugin itself?",
+            "Does the response consider privacy concerns and inform users how their data will be managed?",
+            "Does the response include a brief overview or documentation that explains how the plugin works?"
+        ],
+        "category": "Coding"
+    }
+]
