@@ -34,7 +34,7 @@ Performance of the example data will be updated soon.
 
 ### Evaluation 
 
-- Please link the `v1_3_data`` to `data/compassbench_v1_3` within the opencompass directory
+- Please link the `v1_3_data` to `data/compassbench_v1_3` within the opencompass directory
 
 
 ```bash
